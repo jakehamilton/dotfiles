@@ -15,6 +15,7 @@
 + **Lock Screen**: [i3lock (fork)](https://github.com/Lixxia/i3lock)
 + **Wallpaper Manager**: [feh](https://github.com/derf/feh)
 + **Compositor**: [Compton](https://github.com/chjj/compton)
++ **Lock Screen Helper**: [xautolock](http://freecode.com/projects/xautolock)
 
 ## Themes
 + **Numix Icon Theme**: [Source](https://github.com/numixproject/numix-gtk-theme)
