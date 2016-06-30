@@ -1,5 +1,4 @@
 # Short's dotfiles
--------------------
 ## Preview
 ![](/screenshots/1.png)
 
@@ -15,6 +14,7 @@
 + **Launcher**: [Rofi](https://davedavenport.github.io/rofi/)
 + **Lock Screen**: [i3lock (fork)](https://github.com/Lixxia/i3lock)
 + **Wallpaper Manager**: [feh](https://github.com/derf/feh)
++ **Compositor**: [Compton](https://github.com/chjj/compton)
 
 ## Themes
 + **Numix Icon Theme**: [Source](https://github.com/numixproject/numix-gtk-theme)
