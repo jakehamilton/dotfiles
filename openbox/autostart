@@ -1,0 +1,18 @@
+# Wallpaper
+wp_name="hex.png"
+wp_path="/home/short/Pictures/Wallpapers"
+wallpaper="$wp_path/$wp_name"
+feh -F "$wallpaper" --bg-fill &
+
+# Compositing
+cconfig_path="/home/short/.compton.conf"
+compton --config "$cconfig_path" -b &
+
+# i3Lock
+i3lock -i "$wallpaper" -c '#000000' -o '#191d0f' -w '#572020' -l '#ffffff' -e &
+
+# Lemonbar
+bash ~/.config/lemonbar/bottom &
+
+# Locking after duration
+xautolock -detectsleep -time 20 -locker "i3lock -i $wallpaper -c '#000000' -o '#191d0f' -w '#572020' -l '#ffffff' -e" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 300 seconds'" &

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+source ~/.config/lemonbar/setup
+
+while true; do
+    echo "%{l}$(volume) $(music_controls) $(music)\
+          %{c}$(title)\
+          %{r}$(battery) $(network)$(ssid) %{O 2} $(_date) %{O 2} $(_time)"
+    sleep 1s
+done |
+
+lemonbar\
+    -b\
+    -g "x32"\
+    -F "#ffffff"\
+    -B "#19000000"\
+    -f "$PANEL_FONT_FAMILY"\
+    -f "$ICON_FONT" | bash

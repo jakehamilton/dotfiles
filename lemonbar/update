@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# TODO: make this less hacky.
+
+pkill -f "sleep 1s"
+pkill -f "sleep 3s"

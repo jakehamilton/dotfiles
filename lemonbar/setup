@@ -1,0 +1,159 @@
+#!/bin/bash
+
+PANEL_FIFO=/tmp/panel-fifo
+PANEL_HEIGHT=28
+PANEL_FONT_FAMILY="Sans Bold:size=10"
+ICON_FONT="MaterialIcons:size=14"
+COLOR_BACKGROUND="#BEC4C7"
+COLOR_BACKGROUND="#e9cc24"
+COLOR_FOREGROUND="#000000"
+COLOR_HIGHLIGHT="#000000"
+COLOR_TEXT_HIGHLIGHT="#FFFFFF"
+UPDATE="~/.config/lemonbar/update"
+
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+	printf "%s\n" "The panel is already running." >&2
+	exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+
+# Power button
+power(){
+	echo -e '%{A:oblogout:}  \uE8AC  %{A}'
+}
+
+# Clock
+clock(){
+	echo -e ' \uE916' $(date +'%A, %b %e')  '\uE924' $(date +'%l:%M %p') ' '
+}
+
+_date(){
+	echo -e ' \uE916' $(date +'%A, %b %e')
+}
+
+_time(){
+	echo -e ' \uE924' $(date +'%l:%M %p') ' '
+}
+
+# Battery
+battery(){
+	lvl=$(cat /sys/class/power_supply/BAT0/capacity)
+	stat=$(cat /sys/class/power_supply/BAT0/status)
+	if [ $stat == "Charging" ]
+	then
+		icon='\uE1A3'
+	elif (($lvl > 20))
+	then
+		icon='\uE1A4'
+	else
+		icon='\uE19C'
+	fi
+
+	echo -e $icon $lvl'%' ' '
+}
+
+# Networking
+network(){
+	wired=$(ip route get 8.8.8.8 | grep -Po 'dev \K\w+' | grep -qFf - /proc/net/wireless)
+	if $wired; then
+		icon='\uE8C2'
+		ssid=''
+	else
+		icon='\uE63E'
+		ssid=$(iwgetid -r)
+	fi
+	echo -e $icon $ssid ' '
+}
+
+ssid(){
+	name=$(iwgetid -r)
+	echo $name
+}
+
+# Volume
+volume(){
+	vol=$(amixer get Master | grep % | sed -n 1p | awk -F '[' '{print $2}' | awk -F ']' '{print $1}' | sed s/%//)
+	if [ $vol = 0 ]; then
+		icon='\uE04F'
+	elif [ $vol -lt 33 ]; then
+		icon='\uE04E'
+	elif [ $vol -lt 66 ]; then
+		icon='\uE04D'
+	else
+		icon='\uE050'
+	fi
+
+	echo -e "%{A:amixer -q set Master 5%+ && ${UPDATE}:}\ue5d8%{A}\
+					 %{A:amixer -q set Master 5%- && ${UPDATE}:}\ue5db%{A}"\
+					 '' $icon $vol'%' ' '
+}
+
+#Music
+music(){
+	song=$(mpc current)
+	echo -e '\uE405' $song
+}
+
+music_control_left(){
+	echo -e "%{A:mpc prev:}\ue5c4%{A}"
+}
+
+music_control_right(){
+	echo -e "%{A:mpc next:}\ue5c8%{A}"
+}
+
+music_control_pause_play(){
+	echo -e "%{A:mpc toggle:}\ue038%{A}"
+}
+
+music_controls(){
+	echo -e "$(music_control_left) $(music_control_pause_play) $(music_control_right)"
+}
+
+#Player
+player(){
+	status=$(mpc status | grep -E "(playing|paused)" -o)
+	progress=$(mpc status | grep -E "(playing|paused)" | rev | cut -c 3- | rev | cut -d "(" -f 2)
+	full=$((progress / 2))
+	shade=$((50 - full))
+	if [ $status == "playing" ]; then
+		icon='\uE034'
+	else
+		icon='\uE037'
+	fi
+	echo -e "%{A:mpc -q prev && ${UPDATE}:} \uE045%{A}%{A:mpc -q toggle && ${UPDATE}:} " $icon " %{A}%{A:mpc -q next && ${UPDATE}:}\uE044 %{A} ▌"$(seq -s█ $full|tr -d '[:digit:]')$(seq -s▓ $shade|tr -d '[:digit:]')"▐"
+}
+
+# Workspace
+workspace() {
+	wslist=$(\
+		wmctrl -d \
+		| awk '/ / {print $2 $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20}' ORS=''\
+		| sed -e 's/\s*  //g' \
+		-e 's/\*[ 0-9A-Za-z]*[^ -~]*/\\uE3FA /g' \
+		-e 's/\-[ 0-9A-Za-z]*[^ -~]*/%{A:i3-msg workspace & \&\& \~\/.config\/lemonbar\/update:}\\uE836 %{A}/g' \
+		-e 's/\*//g' \
+		-e 's/ -/ /g' \
+	)
+
+	if (( $(wmctrl -d | wc -l) == 10)); then
+		new=""
+	else
+		new=$(\
+			wmctrl -d\
+			| rev\
+			| cut -c 1\
+			| awk -v RS='\\s+' '{ a[$1] } END { for(i = 1; i in a; ++i); print i }'\
+		)
+		new="%{A:i3-msg workspace $new && ${UPDATE}:}\uE3BA%{A}"
+	fi
+
+	echo -n -e " $wslist$new"
+}
+
+title(){
+	title=$(xdotool getactivewindow getwindowname)
+	echo "$title" | cut -c 1-70
+}
