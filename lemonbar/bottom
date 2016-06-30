@@ -3,7 +3,7 @@
 source ~/.config/lemonbar/setup
 
 while true; do
-    echo "%{l}$(volume) $(music_controls) $(music)\
+    echo "%{l}%{O 2}$(volume) $(music_controls) $(music)\
           %{c}$(title)\
           %{r}$(battery) $(network)$(ssid) %{O 2} $(_date) %{O 2} $(_time)"
     sleep 1s
