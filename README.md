@@ -34,6 +34,7 @@
 Some things are tuned for my system, here's a list of what you need to change:
 
 + `openbox/autostart`: change `wp_name` and `wp_path` to match your image
++ `openbox/rc.xml`: About line 200, change `gnome-terminal` to be your terminal emulator
 
 ## Shortcuts
 + `Alt + Left`: Snap window to left half of the screen
@@ -46,3 +47,4 @@ Some things are tuned for my system, here's a list of what you need to change:
 + `Alt + c`: Open Chrome
 + `Alt + q`: Quit the current application
 + `Ctrl + Alt + l`: Lock the screen
++ `Ctrl + Alt + t`: Launch gnome-terminal
