@@ -14,5 +14,8 @@ i3lock -i "$wallpaper" -c '#000000' -o '#191d0f' -w '#572020' -l '#ffffff' -e &
 # Lemonbar
 bash ~/.config/lemonbar/bottom &
 
+# Gnome Compatibility
+gnome-settings-daemon &
+
 # Locking after duration
 xautolock -detectsleep -time 20 -locker "i3lock -i $wallpaper -c '#000000' -o '#191d0f' -w '#572020' -l '#ffffff' -e" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 300 seconds'" &
