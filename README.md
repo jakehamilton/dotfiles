@@ -30,6 +30,7 @@
 + Extract `lemonbar/*` to `~/.config/lemonbar/`
 + Extract `openbox/*` to `~/.config/openbox/`
 + Append or Replace `.Xresources` to yours at `~/.Xresources`
++ Move `.compton.conf` to your home folder (ie `~/.compton.conf`)
 
 ## Customization
 Some things are tuned for my system, here's a list of what you need to change:
