@@ -10,7 +10,7 @@
 
 ## Software
 + **Window Manager**: [Openbox](http://openbox.org/wiki/Main_Page)
-+ **Bar**: [Lemonbar (a fork that supports ttf fonts)](http://mokaproject.com/moka-icon-theme/)
++ **Bar**: [Lemonbar (a fork that supports ttf fonts)](https://github.com/krypt-n/bar)
 + **Launcher**: [Rofi](https://davedavenport.github.io/rofi/)
 + **Lock Screen**: [i3lock (fork)](https://github.com/Lixxia/i3lock)
 + **Wallpaper Manager**: [feh](https://github.com/derf/feh)
