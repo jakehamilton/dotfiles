@@ -3,6 +3,11 @@ Dotfiles
 
 Enjoy :)
 
+Screenshots
+-----------
+
+![screenshot 1](/.md-resources/screenshot-1.png)
+
 Requirements
 ------------
 
