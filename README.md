@@ -11,7 +11,7 @@ Screenshots
 Requirements
 ------------
 
-This is a loose list and will sure be updated as I install more things:
+This is a loose list and will surely be updated as I install more things:
 
 #### Software
 
