@@ -74,3 +74,7 @@ hi Type    gui=italic
 hi htmlArg cterm=italic
 hi Comment cterm=italic
 hi Type    cterm=italic
+
+" Move *.swp files to a centralized location
+set backupdir=~/.vim-backup/
+set directory=~/.vim-backup/
