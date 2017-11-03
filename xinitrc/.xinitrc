@@ -21,5 +21,8 @@ setxkbmap -option caps:escape &
 synclient ConstantDeceleration=1.5 &
 xinput --set-prop 12 270 1 &
 
+# Start URxvt daemon
+urxvtd -q -o &
+
 # Start i3
 exec i3
