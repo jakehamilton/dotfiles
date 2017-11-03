@@ -20,7 +20,7 @@
 set $mod Mod1
 
 # Path to wallpaper (or directory)
-set $wallpaper "$HOME/Photos/wallpapers/ghibli.jpg"
+set $wallpaper "$HOME/Photos/wallpapers/view.jpg"
 
 #--------------------------------------------
 #            _                
