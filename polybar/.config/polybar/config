@@ -62,7 +62,7 @@ border-bottom-size = ${sizes.bar-bottom-gap}
 border-bottom-color = #00000000
 
 ; Padding
-padding-left = 6
+padding-left = 5
 padding-right = 6
 
 ; Space modules
