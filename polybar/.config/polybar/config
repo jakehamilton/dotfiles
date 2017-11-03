@@ -8,15 +8,71 @@
 ;=====================================================
 
 [colors]
+; Values from xrdb
+
 background = ${xrdb:color0:#222}
-background-alt = ${xrdb:color16:#2e2e2e}
+background-alt = ${xrdb:color6:#2e2e2e}
 foreground = ${xrdb:color7:#fff}
 foreground-alt = ${xrdb:color15:#eee}
 primary = ${xrdb:color3:#ffb52a}
 secondary = ${xrdb:color12:#e60053}
 alert = ${xrdb:color11:#bd2c40}
 
+; Inverted values
+;foreground = ${xrdb:color0:#222}
+;foreground-alt = ${xrdb:color6:#2e2e2e}
+;background = ${xrdb:color15:#eee}
+;background-alt = ${xrdb:color7:#fff}
+
+[sizes]
+bar-width = 1200
+bar-height = 38
+
+bar-offset-x = 190
+bar-bottom-gap = 12
+
 [bar/short]
+; Dimensions
+width = ${sizes.bar-width}
+height = ${sizes.bar-height}
+
+; Colors
+foreground = ${colors.foreground}
+background = ${colors.background}
+
+; Round corners
+radius = 6.0
+
+; Fonts
+font-0 = NotoSans-Regular:size=10;1
+font-1 = MaterialIcons:size=12;3
+
+; Center column isn't affected by other column positions
+fixed-center = true
+
+; Bar goes on bottom
+bottom = true
+
+; Cheat to center the bar
+border-left-size = ${sizes.bar-offset-x}
+border-left-color = #00000000
+
+; Add a gap between the bar and bottom of the screen
+border-bottom-size = ${sizes.bar-bottom-gap}
+border-bottom-color = #00000000
+
+; Padding
+padding-left = 2
+padding-right = 6
+
+; Space modules
+module-margin-right = 6
+
+; Declare modules
+modules-left = i3
+modules-right = filesystem volume cpu memory wlan eth date
+
+[bar/old]
 width = 100%
 height = 27
 radius = 0.0
@@ -55,63 +111,6 @@ tray-padding = 2
 
 ;override-redirect = true
 
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 27
-;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
-fixed-center = false
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 4
-border-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-
-modules-left = bspwm i3
-modules-center = 
-modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
-
-tray-position = right
-tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
 cursor-click = pointer
 cursor-scroll = ns-resize
 
@@ -141,7 +140,9 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted-foreground = ${colors.foreground-alt}
+
+label-mounted = " %percentage_used%%"
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -170,33 +171,35 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
+enable-scroll = false
+
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-padding = 5
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background-alt}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-padding = 4
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-padding = 4
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+label-visible-padding = 4
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent-padding = 6
 
 [module/mpd]
 type = internal/mpd
@@ -236,7 +239,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -244,7 +247,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -254,11 +257,12 @@ type = internal/network
 interface = wlp2s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = " %essid%      %upspeed%      %downspeed%"
 
 format-disconnected =
+label-disconnected = 
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -292,12 +296,12 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt =
 
 time = %H:%M
-time-alt = %H:%M:%S
+time-alt =
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -306,13 +310,16 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted = ""
+
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55

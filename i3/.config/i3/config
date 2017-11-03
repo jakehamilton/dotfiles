@@ -20,7 +20,7 @@
 set $mod Mod1
 
 # Path to wallpaper (or directory)
-set $wallpaper "$HOME/Photos/wallpapers/blue.jpg"
+set $wallpaper "$HOME/Photos/wallpapers/ghibli.jpg"
 
 #--------------------------------------------
 #            _                
@@ -90,12 +90,12 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +5 
 bindsym XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5 &
 bindsym XF86AudioMute exec --no-startup-id pulsemixer --toggle-mute &
 
-# sticky windows
-bindsym $mod+Shift+s sticky toggle
-
 # brightness toggle
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
+
+# sticky windows
+bindsym $mod+Shift+s sticky toggle
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -224,10 +224,10 @@ exec --no-startup-id pulseaudio --start
 
 # Set wallpaper
 # (Handled by wal)
-# exec_always --no-startup-id feh --bg-fill $wallpaper
+exec_always --no-startup-id feh --bg-fill $wallpaper &
 
 # Set color scheme based on wallpaper
-exec --no-startup-id wal -i $wallpaper
+exec_always --no-startup-id wal -q -i $wallpaper &
 
 # Start polybar
-exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
