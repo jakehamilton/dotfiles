@@ -36,6 +36,8 @@ This is a loose list and will surely be updated as I install more things:
 + Wuncon Siji
 + Unifont
 + symbola
++ Material Icons
++ Noto Sans
 
 Installation
 ------------
