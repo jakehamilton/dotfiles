@@ -8,6 +8,8 @@ Screenshots
 
 ![screenshot 1](/.md-resources/screenshot-1.jpg)
 
+![screenshot 2](/.md-resources/screenshot-2.jpg)
+
 Requirements
 ------------
 
