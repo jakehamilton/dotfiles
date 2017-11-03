@@ -15,7 +15,11 @@
 xrdb -load ~/.xdefaults &
 
 # Bind caps lock to escape
-setxkbmap -option caps:escape
+setxkbmap -option caps:escape &
+
+# Fix mouse input
+synclient ConstantDeceleration=1.5 &
+xinput --set-prop 12 270 1 &
 
 # Start i3
 exec i3
