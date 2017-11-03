@@ -6,11 +6,23 @@ Enjoy :)
 Screenshots
 -----------
 
+#### General Busy
+
 ![screenshot 1](/.md-resources/screenshot-1.jpg)
 
 ![screenshot 2](/.md-resources/screenshot-2.jpg)
 
 ![screenshot 3](/.md-resources/screenshot-3.jpg)
+
+#### Different themes based off of wallpapers in `/wallpapers`
+
+![theme 2](/.md-resources/new-wall-2.jpg)
+![theme 3](/.md-resources/new-wall-3.jpg)
+![theme 4](/.md-resources/new-wall-4.jpg)
+![theme 5](/.md-resources/new-wall-5.jpg)
+![theme 6](/.md-resources/new-wall-6.jpg)
+![theme 7](/.md-resources/new-wall-7.jpg)
+![theme 8](/.md-resources/new-wall-8.jpg)
 
 Requirements
 ------------
