@@ -29,6 +29,9 @@ Plugin 'sheerun/vim-polyglot'
 " File system management
 Plugin 'scrooloose/nerdtree'
 
+" Vue file syntax
+Plugin 'posva/vim-vue'
+
 " Done adding plugins
 call vundle#end()
 
@@ -78,3 +81,6 @@ hi Type    cterm=italic
 " Move *.swp files to a centralized location
 set backupdir=~/.vim-backup/
 set directory=~/.vim-backup/
+
+" Ensure syntax highlighting doesn't break on Vue files
+autocmd FileType vue syntax sync fromstart
