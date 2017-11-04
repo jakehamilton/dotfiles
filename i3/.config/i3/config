@@ -217,17 +217,20 @@ gaps outer 12
 #--------------------------------------------
 
 # Start compton (compositor)
-exec --no-startup-id compton -b --config ~/.config/compton/compton.conf
+exec --no-startup-id compton -b --config ~/.config/compton/compton.conf &
 
 # Start pulseaudio
-exec --no-startup-id pulseaudio --start
+exec --no-startup-id pulseaudio --start &
+
+# Start mpd
+exec --no-startup-id mpd &
 
 # Set wallpaper
 # (Handled by wal)
-exec_always --no-startup-id feh --bg-fill $wallpaper &
+exec_always --no-startup-id feh --bg-fill $wallpaper
 
 # Set color scheme based on wallpaper
-exec_always --no-startup-id wal -q -i $wallpaper &
+exec_always --no-startup-id wal -q -i $wallpaper
 
 # Start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
+exec_always --no-startup-id sleep 1 && $HOME/.config/polybar/launch.sh &

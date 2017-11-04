@@ -8,6 +8,9 @@
 " - by Short
 "==============================
 
+" Use bash so vundle works
+set shell=/bin/bash
+
 " Be iMproved (required)
 set nocompatible
 
@@ -30,7 +33,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'scrooloose/nerdtree'
 
 " Vue file syntax
-Plugin 'posva/vim-vue'
+" Plugin 'posva/vim-vue'
 
 " Done adding plugins
 call vundle#end()
@@ -77,10 +80,15 @@ hi Type    gui=italic
 hi htmlArg cterm=italic
 hi Comment cterm=italic
 hi Type    cterm=italic
+highlight Comment cterm=italic
 
 " Move *.swp files to a centralized location
 set backupdir=~/.vim-backup/
 set directory=~/.vim-backup/
 
+" Override italic escape codes
+" set t_ZH=[3m
+" set t_ZR=[23m
+
 " Ensure syntax highlighting doesn't break on Vue files
-autocmd FileType vue syntax sync fromstart
+" autocmd FileType vue syntax sync fromstart

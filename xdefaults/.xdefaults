@@ -47,11 +47,21 @@
 !----------------------------------------------
 
 URxvt.letterSpace: 0
-*.font: xft:Operator Mono Medium:pixelsize=13:antialias=true:hinting=true:hintstyle=hintslight,\
-	    xft:symbola:size=9,\
-	    -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*,\
-      xft:Wuncon Siji 10:size=10
-	
+
+!*.font: xft:Operator Mono:pixelsize=13:antialias=true:hinting=true:hintstyle=hintslight,\
+!  xft:symbola:size=9,\
+!  -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*,\
+!  xft:Wuncon Siji 10:size=10
+
+URxvt.font:xft:Operator Mono:style=Regular:pixelsize=13,\
+  xft:Noto Sans:size=10,\
+  xft:Material Icons:size=8,\
+  -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*,\
+  xft:Wuncon Siji 10:size=10
+
+URxvt.boldFont:xft:Operator Mono:style=Bold:pixelsize=13
+URxvt.italicFont:xft:Operator Mono:style=Italic:pixelsize=13
+URxvt.boldItalicFont:xft:Operator Mono:style=Bold Italic:pixelsize=13
 
 Xft*dpi: 99
 Xft*hinting: full
@@ -68,7 +78,7 @@ Xft*rgba: rgb
 !-
 ! Configure perl extensions
 !-
-URxvt.perl-ext-common: default,selection-to-clipboard,pasta,matcher,keyboard-select
+URxvt.perl-ext-common: default,selection-to-clipboard,matcher,keyboard-select
 
 !-
 ! URxvt data config
@@ -81,7 +91,7 @@ URxvt.scrollBar: false
 !-
 ! Keybinds
 !-
-URxvt.keysym.Control-Shift-V:     perl:pasta:paste
+!URxvt.keysym.Control-Shift-V:     perl:pasta:paste
 URxvt.keysym.M-Escape:perl:keyboard-select:activate
 URxvt.keysym.M-u:     perl:url-select:select_next
 
