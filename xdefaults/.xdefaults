@@ -83,7 +83,7 @@ URxvt.perl-ext-common: default,selection-to-clipboard,matcher,keyboard-select
 !-
 ! URxvt data config
 !-
-URxvt.url-launcher:   /usr/bin/firefox
+URxvt.url-launcher:   /usr/bin/google-chrome-stable
 URxvt.underlineURLs:  true
 URxvt.matcher.button: 1 
 URxvt.scrollBar: false
