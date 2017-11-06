@@ -21,6 +21,9 @@ setxkbmap -option caps:escape &
 synclient ConstantDeceleration=1.5 &
 xinput --set-prop 12 270 1 &
 
+# Disable touchpad when typing
+syndaemon -i 0.5 -t -K -R &
+
 # Start URxvt daemon
 urxvtd -q -o &
 
