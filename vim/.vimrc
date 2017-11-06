@@ -32,6 +32,10 @@ Plugin 'sheerun/vim-polyglot'
 " File system management
 Plugin 'scrooloose/nerdtree'
 
+" Bottom bar
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 " Vue file syntax
 " Plugin 'posva/vim-vue'
 
@@ -43,6 +47,9 @@ filetype plugin indent on
 
 " Enable syntax highlighting
 syntax on
+
+" Airline theme
+let g:airline_theme='minimalist'
 
 " Enable line numbering
 set number
