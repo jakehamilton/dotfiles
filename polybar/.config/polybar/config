@@ -41,11 +41,11 @@ foreground = ${colors.foreground}
 background = ${colors.background}
 
 ; Round corners
-radius = 6.0
+radius = 3.0
 
 ; Fonts
-font-0 = NotoSans-Regular:size=10;1
-font-1 = MaterialIcons:size=12;3
+font-0 = NotoSans-Regular:size=9;1
+font-1 = MaterialIcons:size=11;2
 
 ; Center column isn't affected by other column positions
 fixed-center = true
@@ -70,49 +70,13 @@ module-margin-right = 6
 
 ; Declare modules
 modules-left = i3
-modules-right = filesystem volume cpu memory wlan eth date
+modules-right = volume cpu memory vpn wlan eth date
 
-[bar/old]
-width = 100%
-height = 27
-radius = 0.0
-fixed-center = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-
-modules-left = bspwm i3
-modules-center = 
-modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
-
-tray-position = right
-tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-cursor-click = pointer
-cursor-scroll = ns-resize
+[module/vpn]
+type = custom/script
+exec = pgrep openvpn
+interval = 5
+label = 
 
 [module/xwindow]
 type = internal/xwindow
@@ -259,7 +223,8 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-underline = #9f78e1
-label-connected = " %essid%      %upspeed%      %downspeed%"
+;label-connected = " %essid%      %upspeed%      %downspeed%"
+label-connected = " %essid%"
 
 format-disconnected =
 label-disconnected = 
