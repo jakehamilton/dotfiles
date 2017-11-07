@@ -55,6 +55,7 @@ URxvt.letterSpace: 0
 
 URxvt.font:xft:Operator Mono:style=Regular:pixelsize=13,\
   xft:Noto Sans:size=10,\
+  xft:Hack:size=10,\
   xft:Material Icons:size=8,\
   -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*,\
   xft:Wuncon Siji 10:size=10

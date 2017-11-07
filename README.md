@@ -55,6 +55,7 @@ This is a loose list and will surely be updated as I install more things:
 + symbola
 + Material Icons
 + Noto Sans
++ Hack (for powerline)
 
 Installation
 ------------

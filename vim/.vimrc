@@ -36,6 +36,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" Colors (syntax and airline)
+Plugin 'dylanaraps/wal' 
+
 " Vue file syntax
 " Plugin 'posva/vim-vue'
 
@@ -48,8 +51,8 @@ filetype plugin indent on
 " Enable syntax highlighting
 syntax on
 
-" Airline theme
-let g:airline_theme='minimalist'
+" Set colorscheme to be handled by wal
+colorscheme wal
 
 " Enable line numbering
 set number
@@ -99,3 +102,6 @@ set directory=~/.vim-backup/
 
 " Ensure syntax highlighting doesn't break on Vue files
 " autocmd FileType vue syntax sync fromstart
+
+" Load powerline fonts (Hack in my case)
+let g:airline_powerline_fonts = 1
