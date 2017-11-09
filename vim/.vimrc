@@ -39,6 +39,9 @@ Plugin 'vim-airline/vim-airline-themes'
 " Colors (syntax and airline)
 Plugin 'dylanaraps/wal' 
 
+" Support '.editorconfig' files
+Plugin 'editorconfig/editorconfig-vim'
+
 " Vue file syntax
 " Plugin 'posva/vim-vue'
 
