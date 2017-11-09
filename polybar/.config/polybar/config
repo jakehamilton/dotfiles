@@ -70,7 +70,7 @@ module-margin-right = 6
 
 ; Declare modules
 modules-left = i3
-modules-right = volume cpu memory vpn wlan eth date
+modules-right = volume cpu memory vpn wlan eth battery date
 
 [module/vpn]
 type = custom/script
@@ -309,7 +309,7 @@ battery = BAT1
 adapter = ACAD
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
 format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
@@ -324,11 +324,8 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
+label-charging = " %percentage%%"
+label-discharging =" %percentage%%"
 
 [module/temperature]
 type = internal/temperature
