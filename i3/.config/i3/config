@@ -231,11 +231,11 @@ exec --no-startup-id pulseaudio --start &
 exec --no-startup-id mpd &
 
 # Set wallpaper
-# (Handled by wal)
 exec_always --no-startup-id feh --bg-fill $wallpaper
 
 # Set color scheme based on wallpaper
 exec --no-startup-id wal -q -i $wallpaper -o wal-set
 
 # Start polybar
-exec --no-startup-id sleep 1 && $HOME/.config/polybar/launch.sh &
+# (Handled by wal-set)
+# exec --no-startup-id sleep 1 && $HOME/.config/polybar/launch.sh &
