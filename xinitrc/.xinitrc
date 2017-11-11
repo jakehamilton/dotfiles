@@ -27,5 +27,8 @@ syndaemon -i 0.5 -t -K -R &
 # Start URxvt daemon
 urxvtd -q -o &
 
+# Start screen locker
+xautolock -time 20 -locker $(which lock) -detectsleep &
+
 # Start i3
 exec i3

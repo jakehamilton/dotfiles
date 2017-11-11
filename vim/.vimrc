@@ -42,6 +42,13 @@ Plugin 'dylanaraps/wal'
 " Support '.editorconfig' files
 Plugin 'editorconfig/editorconfig-vim'
 
+" Linting
+Plugin 'w0rp/ale'
+
+" Purescript support
+Plugin 'purescript-contrib/purescript-vim'
+Plugin 'frigoeu/psc-ide-vim'
+
 " Vue file syntax
 " Plugin 'posva/vim-vue'
 

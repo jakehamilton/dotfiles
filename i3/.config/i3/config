@@ -94,6 +94,12 @@ bindsym XF86AudioMute exec --no-startup-id pulsemixer --toggle-mute &
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
+# run wal
+bindsym $mod+w exec wal -i ~/Photos/wallpapers -o wal-set
+
+# lock screen
+bindsym Control+Shift+l exec lock
+
 # sticky windows
 bindsym $mod+Shift+s sticky toggle
 
@@ -130,7 +136,6 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -230,7 +235,7 @@ exec --no-startup-id mpd &
 exec_always --no-startup-id feh --bg-fill $wallpaper
 
 # Set color scheme based on wallpaper
-exec_always --no-startup-id wal -q -i $wallpaper
+exec --no-startup-id wal -q -i $wallpaper -o wal-set
 
 # Start polybar
-exec_always --no-startup-id sleep 1 && $HOME/.config/polybar/launch.sh &
+exec --no-startup-id sleep 1 && $HOME/.config/polybar/launch.sh &
