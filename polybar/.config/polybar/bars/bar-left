@@ -1,0 +1,35 @@
+[bar/left]
+inherit = bar/base
+
+; Detach from wm
+override-redirect = true
+
+; Bar position
+bottom = ${misc.bottom}
+
+; Dimensions
+width = ${sizes.left-bar-width}
+height = ${sizes.split-bar-height}
+
+; Positioning
+offset-x = ${sizes.split-bar-side-gap}
+offset-y = ${sizes.split-bar-bottom-gap}
+
+; Padding
+padding = 4
+
+; Radius
+radius = ${sizes.split-bar-radius}
+
+; Border
+;border-size = 1
+;border-color = ${colors.background-alt}
+
+; @TODO: Remove this test background color
+;background = #ffffff
+
+; Module spacing
+module-margin-right = ${sizes.split-bar-module-gap}
+
+; Modules
+modules-left = date wlan eth vpn volume battery

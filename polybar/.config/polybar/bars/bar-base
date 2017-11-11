@@ -1,0 +1,12 @@
+; The base configuration for bars to extend
+[bar/base]
+
+; Foreground & Background colors
+foreground = ${colors.foreground}
+background = ${colors.background}
+
+; Fonts
+font-0 = NotoSans-Regular:size=8;1
+font-1 = MaterialIcons:size=10;2
+
+

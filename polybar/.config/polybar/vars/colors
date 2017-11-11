@@ -1,0 +1,9 @@
+[colors]
+; Values from xrdb
+background = ${xrdb:color0:#222}
+background-alt = ${xrdb:color11:#2e2e2e}
+foreground = ${xrdb:color7:#fff}
+foreground-alt = ${xrdb:color15:#eee}
+primary = ${xrdb:color3:#ffb52a}
+secondary = ${xrdb:color12:#e60053}
+alert = ${xrdb:color11:#bd2c40}

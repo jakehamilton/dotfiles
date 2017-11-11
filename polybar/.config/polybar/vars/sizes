@@ -1,0 +1,22 @@
+[sizes]
+
+; Placeholder fixed size
+placeholder-height = 22
+
+; Full bar sizes
+bar-width = 1200
+bar-height = 38
+
+bar-offset-x = 190
+bar-bottom-gap = 12
+
+; Split bar sizes
+left-bar-width = 260
+
+split-bar-height = 28
+split-bar-side-gap = 8
+split-bar-bottom-gap = 6
+
+split-bar-radius = 2.0
+
+split-bar-module-gap = 4

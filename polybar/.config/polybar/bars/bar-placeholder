@@ -1,0 +1,18 @@
+; Holds space for the other bars to use
+[bar/placeholder]
+width = 100%
+height = ${sizes.placeholder-height}
+
+bottom = ${misc.bottom}
+
+; Transparent background
+background = rgba(0, 0, 0, 0)
+
+; Keep the bar alive
+modules-left = placeholder
+
+[module/placeholder]
+type = custom/script
+exec = sleep 0
+interval = 10000000
+label = 

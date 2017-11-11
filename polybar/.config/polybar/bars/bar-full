@@ -1,0 +1,41 @@
+[bar/full]
+; Dimensions
+width = ${sizes.bar-width}
+height = ${sizes.bar-height}
+
+; Colors
+foreground = ${colors.foreground}
+background = ${colors.background}
+
+; Round corners
+radius = 3.0
+
+; Fonts
+font-0 = NotoSans-Regular:size=9;1
+font-1 = MaterialIcons:size=11;2
+
+; Center column isn't affected by other column positions
+fixed-center = true
+
+; Bar goes on bottom
+bottom = true
+
+; Cheat to center the bar
+border-left-size = ${sizes.bar-offset-x}
+border-left-color = #00000000
+
+; Add a gap between the bar and bottom of the screen
+border-bottom-size = ${sizes.bar-bottom-gap}
+border-bottom-color = #00000000
+
+; Padding
+padding-left = 5
+padding-right = 6
+
+; Space modules
+module-margin-right = 6
+
+; Declare modules
+modules-left = i3
+modules-right = volume vpn wlan eth battery cpu memory date
+

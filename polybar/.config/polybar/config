@@ -1,103 +1,65 @@
-;=====================================================
+;==================================================
+;              _       _                
+;  _ __   ___ | |_   _| |__   __ _ _ __ 
+; | '_ \ / _ \| | | | | '_ \ / _` | '__|
+; | |_) | (_) | | |_| | |_) | (_| | |   
+; | .__/ \___/|_|\__, |_.__/ \__,_|_|   
+; |_|            |___/              
 ;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;
-;=====================================================
+; - by Short
+;==================================================
 
-[colors]
-; Values from xrdb
-
-background = ${xrdb:color0:#222}
-background-alt = ${xrdb:color11:#2e2e2e}
-foreground = ${xrdb:color7:#fff}
-foreground-alt = ${xrdb:color15:#eee}
-primary = ${xrdb:color3:#ffb52a}
-secondary = ${xrdb:color12:#e60053}
-alert = ${xrdb:color11:#bd2c40}
-
-; Inverted values
-;foreground = ${xrdb:color0:#222}
-;foreground-alt = ${xrdb:color6:#2e2e2e}
-;background = ${xrdb:color15:#eee}
-;background-alt = ${xrdb:color7:#fff}
-
-[sizes]
-bar-width = 1200
-bar-height = 38
-
-bar-offset-x = 190
-bar-bottom-gap = 12
-
-[bar/short]
-; Dimensions
-width = ${sizes.bar-width}
-height = ${sizes.bar-height}
+;--------------------------------------------------
+;  _            _           _      
+; (_)_ __   ___| |_   _  __| | ___ 
+; | | '_ \ / __| | | | |/ _` |/ _ \
+; | | | | | (__| | |_| | (_| |  __/
+; |_|_| |_|\___|_|\__,_|\__,_|\___|
+;--------------------------------------------------
 
 ; Colors
-foreground = ${colors.foreground}
-background = ${colors.background}
+include-file = $HOME/.config/polybar/vars/colors
 
-; Round corners
-radius = 3.0
+; Sizes
+include-file = $HOME/.config/polybar/vars/sizes
 
-; Fonts
-font-0 = NotoSans-Regular:size=9;1
-font-1 = MaterialIcons:size=11;2
+; Misc
+include-file = $HOME/.config/polybar/vars/misc
 
-; Center column isn't affected by other column positions
-fixed-center = true
+; Placeholder bar
+include-file = $HOME/.config/polybar/bars/bar-placeholder
 
-; Bar goes on bottom
-bottom = true
+; Base bar
+include-file = $HOME/.config/polybar/bars/bar-base
 
-; Cheat to center the bar
-border-left-size = ${sizes.bar-offset-x}
-border-left-color = #00000000
+; Full bar
+include-file = $HOME/.config/polybar/bars/bar-full
 
-; Add a gap between the bar and bottom of the screen
-border-bottom-size = ${sizes.bar-bottom-gap}
-border-bottom-color = #00000000
+; Left bar
+include-file = $HOME/.config/polybar/bars/bar-left
 
-; Padding
-padding-left = 5
-padding-right = 6
+; Center bar
+include-file = $HOME/.config/polybar/bars/bar-center
 
-; Space modules
-module-margin-right = 6
+; Right bar
+include-file = $HOME/.config/polybar/bars/bar-right
 
-; Declare modules
-modules-left = i3
-modules-right = volume cpu memory vpn wlan eth battery date
+;--------------------------------------------------
+;                      _       _           
+;  _ __ ___   ___   __| |_   _| | ___  ___ 
+; | '_ ` _ \ / _ \ / _` | | | | |/ _ \/ __|
+; | | | | | | (_) | (_| | |_| | |  __/\__ \
+; |_| |_| |_|\___/ \__,_|\__,_|_|\___||___/
+;--------------------------------------------------
 
+;vPN
 [module/vpn]
 type = custom/script
 exec = pgrep openvpn
 interval = 5
 label = 
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
+; Disk Usage
 [module/filesystem]
 type = internal/fs
 interval = 25
@@ -110,25 +72,7 @@ label-mounted = " %percentage_used%%"
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
-
+; Window Manager
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -165,6 +109,7 @@ label-urgent = %index%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = 6
 
+; Media Information
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
@@ -178,28 +123,7 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
+; CPU Information
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -208,6 +132,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
 
+; RAM Information
 [module/memory]
 type = internal/memory
 interval = 2
@@ -216,30 +141,24 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
 
+; WiFi Information
 [module/wlan]
 type = internal/network
 interface = wlp2s0
 interval = 3.0
 
-format-connected = <label-connected>
-format-connected-underline = #9f78e1
+;format-connected = <label-connected>
+;format-connected-underline = #9f78e1
 ;label-connected = " %essid%      %upspeed%      %downspeed%"
 label-connected = " %essid%"
 
+format-connected = <label-connected>
+;label-connected = ""
+
 format-disconnected =
 label-disconnected = 
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
+; LAN Information
 [module/eth]
 type = internal/network
 interface = enp1s0
@@ -256,6 +175,7 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
+; Time
 [module/date]
 type = internal/date
 interval = 5
@@ -272,6 +192,7 @@ format-underline = #0a6cf5
 
 label = %date% %time%
 
+; Volume
 [module/volume]
 type = internal/volume
 
@@ -303,68 +224,18 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+; Power Information
 [module/battery]
 type = internal/battery
 battery = BAT1
 adapter = ACAD
-full-at = 99
+full-at = 100
 
 format-charging = <label-charging>
-format-charging-underline = #ffb52a
-
 format-discharging = <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
 
-label-charging = " %percentage%%"
-label-discharging =" %percentage%%"
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+label-charging = " %percentage%%"
+label-discharging = " %percentage%%"
 
 [settings]
 screenchange-reload = true
