@@ -1,0 +1,3 @@
+#!/bin/fish
+
+fish -c "~/.config/polybar/launch.sh"

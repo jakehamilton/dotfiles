@@ -1,0 +1,3 @@
+#!/bin/fish
+
+i3lock-fancy -f Operator-Mono-Medium-Italic -p -- scrot -z
