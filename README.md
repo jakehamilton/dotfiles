@@ -1,7 +1,9 @@
 Dotfiles
 ========
 
-Enjoy :)
+These configs are updated fairly often while I tweak things, don't be surprised if
+there is a new version available right after you install. They should at least be
+really easy to update. Enjoy!
 
 Screenshots
 -----------
