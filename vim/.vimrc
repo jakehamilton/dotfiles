@@ -52,8 +52,11 @@ Plugin 'frigoeu/psc-ide-vim'
 " Git diffs in the signs column
 Plugin 'airblade/vim-gitgutter'
 
+" Better buffer management
+Plugin 'qpkorr/vim-bufkill'
+
 " Vue file syntax
-" Plugin 'posva/vim-vue'
+Plugin 'posva/vim-vue'
 
 " Done adding plugins
 call vundle#end()
@@ -72,7 +75,10 @@ set number
 set relativenumber
 
 " Keep cursor in the center of the screen more
-set scrolloff=20
+set scrolloff=15
+
+" Ignore case in searches
+set ignorecase
 
 " Indenting rules
 set tabstop=2
@@ -105,8 +111,8 @@ hi Comment cterm=italic
 hi Type    cterm=italic
 highlight Comment cterm=italic
 
-" Customize buffer delimiters
-set fillchars+=vert:\│
+" Remove characters between buffers (nvim)
+set fillchars=
 
 " Move *.swp files to a centralized location
 set backupdir=~/.vim-backup/
@@ -117,7 +123,7 @@ set directory=~/.vim-backup/
 " set t_ZR=[23m
 
 " Ensure syntax highlighting doesn't break on Vue files
-" autocmd FileType vue syntax sync fromstart
+autocmd FileType vue syntax sync fromstart
 
 " Load powerline fonts (Hack in my case)
 let g:airline_powerline_fonts = 1
