@@ -1,3 +1,4 @@
 #!/bin/fish
 
+# Launch i3lock-fancy
 i3lock-fancy -f Operator-Mono-Medium-Italic -p -- scrot -z

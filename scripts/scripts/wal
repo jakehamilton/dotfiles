@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 #
+# A warm thank you to Dyaln Araps for this script~
+#
 # wal - Generate and change colorschemes on the fly.
 #
 # Created by Dylan Araps
+# https://github.com/dylanaraps/wal
 
 # Speed up script by not using unicode.
 sys_locale="$LANG"
