@@ -16,6 +16,8 @@ Screenshots
 
 ![screenshot 3](/.md-resources/screenshot-3.jpg)
 
+![screenshot 4](/.md-resources/screenshot-4.jpg)
+
 #### Different themes based off of wallpapers in `/wallpapers`
 
 ![theme 1](/.md-resources/new-wall-1.jpg)
