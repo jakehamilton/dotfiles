@@ -102,6 +102,9 @@ hi Comment cterm=italic
 hi Type    cterm=italic
 highlight Comment cterm=italic
 
+" Customize buffer delimiters
+set fillchars+=vert:\│
+
 " Move *.swp files to a centralized location
 set backupdir=~/.vim-backup/
 set directory=~/.vim-backup/
