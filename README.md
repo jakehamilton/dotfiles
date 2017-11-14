@@ -18,6 +18,7 @@ Screenshots
 
 #### Different themes based off of wallpapers in `/wallpapers`
 
+![theme 1](/.md-resources/new-wall-1.jpg)
 ![theme 2](/.md-resources/new-wall-2.jpg)
 ![theme 3](/.md-resources/new-wall-3.jpg)
 ![theme 4](/.md-resources/new-wall-4.jpg)
@@ -51,6 +52,7 @@ This is a loose list and will surely be updated as I install more things:
 + dunst
 + redshift
 + i3lock-fancy
++ scrot
 
 #### Fonts
 
