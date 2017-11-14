@@ -30,5 +30,8 @@ urxvtd -q -o &
 # Start screen locker
 xautolock -time 20 -locker $(which lock) -detectsleep &
 
+# Start redshift
+pgrep redshift &> /dev/null || redshift -l geoclue2 &> /dev/null &
+
 # Start i3
 exec i3
