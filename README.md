@@ -48,6 +48,9 @@ This is a loose list and will surely be updated as I install more things:
 + URxvt
 + urxvt-perls
 + Vundle
++ dunst
++ redshift
++ i3lock-fancy
 
 #### Fonts
 
