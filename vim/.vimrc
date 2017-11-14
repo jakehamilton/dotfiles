@@ -49,6 +49,9 @@ Plugin 'w0rp/ale'
 Plugin 'purescript-contrib/purescript-vim'
 Plugin 'frigoeu/psc-ide-vim'
 
+" Git diffs in the signs column
+Plugin 'airblade/vim-gitgutter'
+
 " Vue file syntax
 " Plugin 'posva/vim-vue'
 
