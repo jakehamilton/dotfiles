@@ -20,7 +20,7 @@
 set $mod Mod1
 
 # Path to wallpaper (or directory)
-set $wallpaper "$HOME/Photos/wallpapers/store.jpg"
+set $wallpaper "$HOME/Photos/wallpapers/soda.jpg"
 
 #--------------------------------------------
 #            _                
@@ -101,7 +101,7 @@ bindsym $mod+w exec wal -i ~/Photos/wallpapers -o wal-set
 bindsym Control+Shift+l exec lock
 
 # sticky windows
-bindsym $mod+Shift+s sticky toggle
+bindsym $mod+s sticky toggle
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -135,7 +135,6 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -234,7 +233,7 @@ exec --no-startup-id mpd &
 exec_always --no-startup-id feh --bg-fill $wallpaper
 
 # Set color scheme based on wallpaper
-exec --no-startup-id wal -q -i $wallpaper -o wal-set
+exec_always --no-startup-id wal -q -i $wallpaper -o wal-set
 
 # Start polybar
 # (Handled by wal-set)
