@@ -46,13 +46,14 @@
 ! |_|  \___/|_| |_|\__|___/
 !----------------------------------------------
 
+!-
+! Fix kerning
+!-
 URxvt.letterSpace: 0
 
-!*.font: xft:Operator Mono:pixelsize=13:antialias=true:hinting=true:hintstyle=hintslight,\
-!  xft:symbola:size=9,\
-!  -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*,\
-!  xft:Wuncon Siji 10:size=10
-
+!-
+! Main font
+!-
 URxvt.font:xft:Operator Mono:style=Regular:pixelsize=13,\
   xft:Noto Sans:size=10,\
   xft:Hack:size=10,\
@@ -60,10 +61,16 @@ URxvt.font:xft:Operator Mono:style=Regular:pixelsize=13,\
   -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*,\
   xft:Wuncon Siji 10:size=10
 
+!-
+! Different font styles (eg. italic, bold)
+!-
 URxvt.boldFont:xft:Operator Mono:style=Bold:pixelsize=13
 URxvt.italicFont:xft:Operator Mono:style=Italic:pixelsize=13
 URxvt.boldItalicFont:xft:Operator Mono:style=Bold Italic:pixelsize=13
 
+!-
+! Font tweaks
+!-
 Xft*dpi: 99
 Xft*hinting: full
 Xft*antialias: true
@@ -84,7 +91,7 @@ URxvt.perl-ext-common: default,selection-to-clipboard,matcher,keyboard-select
 !-
 ! URxvt data config
 !-
-URxvt.url-launcher:   /usr/bin/google-chrome-stable
+URxvt.url-launcher:   /usr/bin/firefox-developer
 URxvt.underlineURLs:  true
 URxvt.matcher.button: 1 
 URxvt.scrollBar: false
