@@ -36,25 +36,60 @@ This is a loose list and will surely be updated as I install more things:
 
 #### Software
 
-+ mpd
-+ ncmpcpp
-+ python2.7
-+ python3.6
-+ fish
-+ vim
-+ polybar
-+ wal
-+ feh
-+ i3-gaps
 + xorg-server
 + xorg-xinit
+  - Well, you need a display server
+
++ i3-gaps
+  - Window manager
+
++ i3lock-fancy
+  - Lock screen
+
 + URxvt
 + urxvt-perls
-+ Vundle
-+ dunst
-+ redshift
-+ i3lock-fancy
+  - Terminal emulator and plugins
+
++ fish
+  - Better shell
+
++ python2.7
++ python3.6
+  - Python
+
 + scrot
+  - Screenshotting (used with i3lock-fancy)
+
++ vim
++ nvim
+  - Pick which editor you want
+
++ Vundle
+  - Vim plugin manager
+
++ polybar
+  - Easily configurable status bar
+
++ dunst
+  - Notification manager
+
++ feh
+  - Image viewer and wallpaper tool
+
++ wal
+  - Theming script by [@dylanaraps](https://github.com/dylanaraps)
+
++ redshift
+  - Don't hurt your eyes
+
++ light
+  - Control backlight easily
+
++ mpd
+  - Media daemon
+
++ ncmpcpp
+  - Interface for mpd
 
 #### Fonts
 
