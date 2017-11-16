@@ -58,6 +58,9 @@ Plugin 'qpkorr/vim-bufkill'
 " Vue file syntax
 Plugin 'posva/vim-vue'
 
+" Smart completion
+Plugin 'Shougo/deoplete.nvim'
+
 " Done adding plugins
 call vundle#end()
 
@@ -127,3 +130,10 @@ autocmd FileType vue syntax sync fromstart
 
 " Load powerline fonts (Hack in my case)
 let g:airline_powerline_fonts = 1
+
+" Configure linter fixers
+let g:ale_fixers = {}
+let g:ale_fixers.javascript = ['eslint']
+
+" Use deoplete
+call deoplete#enable()
