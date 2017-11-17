@@ -31,6 +31,7 @@ Plugin 'sheerun/vim-polyglot'
 
 " File system management
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Bottom bar
 Plugin 'vim-airline/vim-airline'
@@ -137,3 +138,6 @@ let g:ale_fixers.javascript = ['eslint']
 
 " Use deoplete
 call deoplete#enable()
+
+" Enable jsdoc highlighting
+let g:javascript_plugin_jsdoc = 1
