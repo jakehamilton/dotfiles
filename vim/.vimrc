@@ -62,6 +62,9 @@ Plugin 'posva/vim-vue'
 " Smart completion
 Plugin 'Shougo/deoplete.nvim'
 
+" JS completions
+Plugin 'mhartington/nvim-typescript'
+
 " Done adding plugins
 call vundle#end()
 
@@ -137,7 +140,8 @@ let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['eslint']
 
 " Use deoplete
-call deoplete#enable()
+" call deoplete#enable()
+let g:deoplete#enable_at_startup = 1
 
 " Enable jsdoc highlighting
 let g:javascript_plugin_jsdoc = 1
