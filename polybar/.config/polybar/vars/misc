@@ -1,2 +1,4 @@
 [misc]
 bottom = true
+
+; vim:ft=cfg

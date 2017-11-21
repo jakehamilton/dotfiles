@@ -4,10 +4,10 @@
 placeholder-height = 22
 
 ; Full bar sizes
-bar-width = 1200
+bar-width = 1600
 bar-height = 38
 
-bar-offset-x = 190
+bar-offset-x = 320
 bar-bottom-gap = 12
 
 ; Split bar sizes
@@ -20,3 +20,5 @@ split-bar-bottom-gap = 6
 split-bar-radius = 2.0
 
 split-bar-module-gap = 4
+
+; vim:ft=cfg

@@ -7,3 +7,5 @@ foreground-alt = ${xrdb:color15:#eee}
 primary = ${xrdb:color3:#ffb52a}
 secondary = ${xrdb:color12:#e60053}
 alert = ${xrdb:color11:#bd2c40}
+
+; vim:ft=cfg
