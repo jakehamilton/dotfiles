@@ -55,6 +55,7 @@ URxvt.letterSpace: 0
 ! Main font
 !-
 URxvt.font:xft:Operator Mono:style=Regular:pixelsize=13,\
+  xft:Noto Color Emoji:size=10,\
   xft:Noto Sans:size=10,\
   xft:Hack:size=10,\
   xft:Material Icons:size=8,\
@@ -116,4 +117,4 @@ URxvt*iso14755: False
 !-
 ! Set padding
 !-
-URxvt.internalBorder: 16
+URxvt.internalBorder: 24
