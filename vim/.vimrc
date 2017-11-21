@@ -145,3 +145,13 @@ let g:deoplete#enable_at_startup = 1
 
 " Enable jsdoc highlighting
 let g:javascript_plugin_jsdoc = 1
+
+" Airline glyph map
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" Fix airline glyphs not rendering in URxvt
+let g:airline_left_alt_sep = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr = ''
