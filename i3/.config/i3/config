@@ -20,7 +20,7 @@
 set $mod Mod1
 
 # Path to wallpaper (or directory)
-set $wallpaper "$HOME/Photos/wallpapers/soda.jpg"
+set $wallpaper "$HOME/Photos/wallpapers/countryside.jpg"
 
 #--------------------------------------------
 #            _                
@@ -187,18 +187,27 @@ mode "resize" {
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape
+        bindsym $mod+r mode "default"
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
+
+# move floating windows
+mode "move" {
+  bindsym j move left 20px
+  bindsym k move down 20px
+  bindsym l move up 20px
+  bindsym semicolon move right 20px
+
+  bindsym $mod+m mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+m focus floating; mode "move"
 
 #--------------------------------------------
 #   __ _  __ _ _ __  ___ 
@@ -222,6 +231,9 @@ gaps outer 12
 
 # Start compton (compositor)
 exec --no-startup-id compton -b --config ~/.config/compton/compton.conf &
+
+# Start dunst
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
 
 # Start pulseaudio
 exec --no-startup-id pulseaudio --start &
