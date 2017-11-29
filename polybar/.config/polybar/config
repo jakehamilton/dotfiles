@@ -52,7 +52,7 @@ include-file = $HOME/.config/polybar/bars/bar-right
 ; |_| |_| |_|\___/ \__,_|\__,_|_|\___||___/
 ;--------------------------------------------------
 
-;vPN
+;VPN
 [module/vpn]
 type = custom/script
 exec = pgrep openvpn
