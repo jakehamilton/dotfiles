@@ -1,0 +1,2 @@
+# Allow deletion of things
+allow_for_physical_item_deletion = "yes"

@@ -1,0 +1,32 @@
+# vim: sw=4 ts=4
+
+- defaults:
+    link:
+        create: true
+        relink: true
+
+- clean: ['~', '/etc/modules-load.d/','/etc/modprobe.d/']
+
+- link:
+    ~/.config/sway: sway/
+    ~/.config/waybar: waybar
+    ~/.config/nvim/init.vim: neovim/init.vim
+    ~/.config/fish: fish
+    ~/.config/mpd: mpd
+    ~/.config/mpv: mpv
+    ~/.config/ncmpmcpp: ncmpcpp
+    ~/.config/castero: castero
+    ~/.config/termite: termite
+    ~/.config/ranger: ranger
+    ~/Photos/wallpapers: wallpapers
+    /etc/modules-load.d: kernel-modules/autoload
+    /etc/modprobe.d: kernel-modules/blacklist
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [mkdir -p ~/Photos, Creating photos directory]
+    - [mkdir -p ~/Documents, Creating documents directory]
+    - [mkdir -p ~/Downloads, Creating downloads directory]
+    - [mkdir -p ~/Music, Creating music directory]
+    - [mkdir -p ~/Videos, Creating videos directory]
+    - [mkdir -p ~/Games, Creating games directory]
