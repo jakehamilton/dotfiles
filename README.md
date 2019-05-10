@@ -21,6 +21,8 @@ cd ~/dotfiles
 sudo ./install
 ```
 
+You'll likely also want to grab the right fonts from [Nerd Fonts](https://nerdfonts.com).
+
 ## Install (individually)
 
 If you do not want all of these configuration files, you can install the ones
