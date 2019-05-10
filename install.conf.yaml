@@ -18,6 +18,7 @@
     ~/.config/castero: castero
     ~/.config/termite: termite
     ~/.config/ranger: ranger
+    ~/.config/rofi: rofi
     ~/Photos/wallpapers: wallpapers
     /etc/modules-load.d: kernel-modules/autoload
     /etc/modprobe.d: kernel-modules/blacklist
