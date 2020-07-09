@@ -31,7 +31,7 @@ destination.
 
 ### Copying
 
-For exapmle, to install neovim configuration
+For example, to install neovim configuration
 
 ```shell
 mkdir -p ~/.config/nvim
@@ -41,7 +41,7 @@ cp ~/dotfiles/neovim/* ~/.config/nvim/
 
 ### Linking
 
-For exapmle, to install neovim configuration
+For example, to install neovim configuration
 
 ```shell
 mkdir -p ~/.config/nvim
