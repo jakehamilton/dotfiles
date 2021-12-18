@@ -8,20 +8,20 @@
 - clean: ['~', '/etc/modules-load.d/','/etc/modprobe.d/']
 
 - link:
-    ~/.config/sway: sway/
-    ~/.config/waybar: waybar
+   ~/.config/sway: sway/
+   ~/.config/waybar: waybar
     ~/.config/nvim/init.vim: neovim/init.vim
-    ~/.config/fish: fish
-    ~/.config/mpd: mpd
-    ~/.config/mpv: mpv
-    ~/.config/ncmpmcpp: ncmpcpp
-    ~/.config/castero: castero
-    ~/.config/termite: termite
-    ~/.config/ranger: ranger
-    ~/.config/rofi: rofi
-    ~/Photos/wallpapers: wallpapers
-    /etc/modules-load.d: kernel-modules/autoload
-    /etc/modprobe.d: kernel-modules/blacklist
+   ~/.config/fish: fish
+   ~/.config/mpd: mpd
+   ~/.config/mpv: mpv
+   ~/.config/ncmpmcpp: ncmpcpp
+   ~/.config/castero: castero
+   ~/.config/termite: termite
+   ~/.config/ranger: ranger
+   ~/.config/rofi: rofi
+   ~/Photos/wallpapers: wallpapers
+   /etc/modules-load.d: kernel-modules/autoload
+   /etc/modprobe.d: kernel-modules/blacklist
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
