@@ -12,7 +12,7 @@
     config = {
       focus_follows_mouse          = "off";
       mouse_follows_focus          = "off";
-      external_bar                 = "all:0:0";
+      external_bar                 = "all:24:0";
       window_placement             = "second_child";
       window_opacity               = "on";
       window_opacity_duration      = "0.0";
@@ -34,7 +34,7 @@
       mouse_action1                = "move";
       mouse_action2                = "resize";
       layout                       = "bsp";
-      top_padding                  = 36;
+      top_padding                  = 10;
       bottom_padding               = 10;
       left_padding                 = 10;
       right_padding                = 10;

@@ -12,11 +12,12 @@
 
   outputs = { self, nixpkgs, darwin }:
     let
-      lib = (import ./lib) { inherit nixpkgs darwin; };
+      lib = (import ./lib) { inherit darwin nixpkgs; };
     in {
       darwinConfigurations =
         let
-          systems = [
+          systems =
+          [
             (lib.mkDarwin "INTUL18ad4a5fb" "x86_64-darwin")
           ];
         in

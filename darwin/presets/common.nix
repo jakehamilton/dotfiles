@@ -43,6 +43,9 @@
   # Don't show the top bar unless moused over
   system.defaults.NSGlobalDomain._HIHideMenuBar = true;
 
+  # Enable custom key mappings
+  system.keyboard.enableKeyMapping = true;
+
   # Replace caps lock with escape. More convenient in vim
   system.keyboard.remapCapsLockToEscape = true;
 
@@ -69,4 +72,7 @@
   system.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
   system.defaults.NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false;
   system.defaults.NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled = false;
+
+  # Don't hide scrollbars
+  system.defaults.NSGlobalDomain.AppleShowScrollBars = "Always";
 }

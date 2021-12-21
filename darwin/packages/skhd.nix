@@ -12,6 +12,11 @@
     "alt - k : yabai -m window --focus north"
     "alt - l : yabai -m window --focus east"
 
-    "alt - b : yabai -m space --balance"
+    "shift + alt - h : yabai -m window --move west"
+    "shift + alt - j : yabai -m window --move south"
+    "shift + alt - k : yabai -m window --move north"
+    "shift + alt - l : yabai -m window --move east"
+
+    # "shift + alt - space : yabai -m window --toggle float"
   ];
 }

@@ -1,4 +1,4 @@
-{ nixpkgs, darwin }:
+{ nixpkgs, darwin, ... }:
 
 let
   lib = rec {
